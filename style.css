@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
+
+* {
+    font-family: 'REM', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: .2s linear;
+    text-transform: capitalize;
+}
+
+/* :root is used to target the most parent element in CSS or html and declare global variables and we can use them anywhere in CSS */
+:root {
+    --green: #00E77F;
+    --white: #fff;
+    --light-white: #aaa;
+    --black: #3d3d3d;
+    --light-bg: #4b4b4b;
+
+}
+
+/* ::selection is used to target the text which is highlighted in the whole webpage */
+::selection {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+html {
+    font-size: 62.5%;
+    /* overflow-x:hidden  property hides the extra content that overflos the container horizontally */
+    overflow-x: hidden;
+    /* scroll-behavior: smooth property smothens the scrolling behaviour by creating an animation ; */
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: var(--light-bg);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+}
+
+.btn:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+.heading{
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.heading span{
+    color: var(--green);
+
+}
+
+::-webkit-scrollbar {
+    height: 5rem;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background-color: var(--green);
+}
+
+body {
+    background-color: var(--black);
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* z-index property controls the element that will overlap but it only works for elements who havr fixed,absolute positions. Higher z-index value element will appear on top and lower z-index value element will apppear below the higher one */
+    z-index: 1000;
+    background-color: var(--light-bg);
+}
+
+.header .flex {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.header .flex .navbar a {
+    margin-left: 2rem;
+    color: var(--light-white);
+    font-size: 2rem;
+}
+
+.header .flex .navbar a:hover {
+    color: var(--green);
+}
+
+#menu-btn {
+    cursor: pointer;
+    color: var(--white);
+    font-size: 2.5rem;
+    display: none;
+}
+
+
+.home{
+    margin-top: 6rem;
+}
+
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+}
+
+.home .row .content{
+    /* In CSS, flex: 1 1 40rem; is a shorthand property for defining the flex-grow, flex-shrink, and flex-basis properties of a flex item in a flex container. It's commonly used to control the sizing behavior of flex items within a flex container.
+The flex shorthand property accepts up to three values, and their meanings are as follows:
+flex-grow: This value defines how much the flex item can grow relative to other flex items inside the same flex container. It represents a proportion of the available space that the item can take up. For example, if all flex items have a flex-grow value of 1, they will share the available space equally. If one item has flex-grow: 2, it will take twice as much space as an item with flex-grow: 1 when there is extra space in the container.
+flex-shrink: This value defines how much the flex item can shrink relative to other flex items when there is not enough space in the flex container to accommodate all items at their specified sizes. It represents the ability of the item to shrink proportionally. If all flex items have a flex-shrink value of 1, they will shrink at the same rate. If one item has flex-shrink: 0, it will not shrink, and other items will take up the available space when necessary.
+flex-basis: This value defines the initial size of the flex item before any available space is distributed. It can be specified as a length (e.g., 40rem), a percentage (e.g., 50%), or one of the keywords (auto, content, etc.). The flex-basis value determines the default size of the flex item, and the flex container will try to honor this size when possible.
+
+In the case of flex: 1 1 40rem;, it means:
+
+flex-grow: 1: The flex item can grow and will share any available space with other flex items.
+flex-shrink: 1: The flex item can shrink and will reduce its size when there is not enough space in the flex container.
+flex-basis: 40rem: The flex item will have an initial size of 40 rem.
+Overall, this shorthand is often used when you want the flex item to be flexible, taking available space as needed, but with an initial size of 40 rem.
+
+ */
+    flex: 1 1 40rem;
+    text-align: center;
+    
+}
+
+.home .row .image{
+    flex: 1 1 40rem;
+}
+
+.home .row .image img{
+    width: 100%;
+}
+
+
+.home .row .content h3{
+    margin-bottom: 1rem;
+    font-size: 10rem;
+    color: var(--white);
+    line-height: 1;
+}
+
+.home .row .content h3 span{
+    color: var(--green);
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex: 1 1 40rem;
+
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    text-align: center;
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.about .row .content p{
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+.courses .slide{
+    /* width: 30rem; */
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+
+.courses .slide img{
+    height: 25rem;
+    /* width: 100%; */
+}
+
+.courses .slide h3{
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.courses .slide p{
+    line-height: 2;
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+
+.teachers .slide{
+    position: relative; 
+    width: 40rem;
+    overflow: hidden;
+    user-select: none;
+    /* padding-left: 50px; */
+}
+
+.teachers .slide img{
+    height: 55rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.teachers .slide h3{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.teachers .slide span{
+    /* margin-top: 9rem; */
+    /* width: 30px; */
+    /* padding-top: 3px; */
+    font-size: 2rem;
+    color: var(--light-white);
+    text-align: center;
+}
+
+.teachers .slide .share{
+    position: absolute;
+    top: 1rem; left: -10rem;
+}
+
+.teachers .slide:hover .share{
+    left: 2rem;
+}
+
+
+.teachers .slide .share a{
+    display: block;
+    margin-top: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+.teachers .slide .share a:hover{
+    background-color: var(--green);
+    color: var(--white);
+
+}
+
+.reviews-sliders .slide{
+    width: 35rem;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+
+.reviews-sliders .slide p{
+    line-height: 2;
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+.reviews-sliders .slide .user{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.reviews-sliders .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviews-sliders .slide .user h3{
+    font-size: 2rem;
+    columns: var(--white);
+    margin-bottom: .7rem;
+}
+
+.reviews-sliders .slide .user .stars i{
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.reviews-sliders{
+    display: flex;
+    justify-content: center;
+}
+
+.teachers-slider{
+    display: flex;
+    justify-content: center;
+}
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact .row .image{
+    flex: 1 1 40rem;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row form{
+    flex: 1 1 40rem;
+}
+
+.contact .row form .box{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    font-size: 1.8rem;
+    color: var(--white);
+    padding: 1.4rem;
+}
+
+
+.contact .row form span{
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+
+.video .row .image img{
+    margin-top: 25px;
+    width: 85%;
+    padding-left: 120px;
+
+}
+
+.video .row .image .img1{
+    padding-bottom: 34px;
+}
+.video .row .image .img2{
+    padding-bottom: 34px;
+}
+.video .row .image .img3{
+    padding-bottom: 34px;
+}
+.video .row .image .img4{
+    padding-bottom: 34px;
+}
+
+
+.footer{
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.footer .share a{
+    margin: 0 .3rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.footer .share a:hover{
+    background-color: var(--green);
+}
+
+.footer .credit{
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    padding-top: 2.5rem;
+    border-top: .1rem solid var(--light-white);
+    font-size: 2rem;
+    color: var(--light-white);
+}
+
+.footer .credit span{
+    color: var(--green);
+}
+
+
+
+
+.image h3{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    /* color: var(--white); */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* Media Queries */
+
+
+
+@media(max-width:991px) {
+    html {
+        font-size: 55%;
+
+    }
+    .home .row .content h3{
+        font-size: 8rem;
+
+    }
+}
+
+@media(max-width:768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        border-top: 1rem solid var(--light-white);
+        border-bottom: 1rem solid var(--light-white);
+        background-color: var(--light-bg);
+        /* clip-path is a CSS property that allows you to create custom clipping paths to clip an element's content. It's a powerful tool that lets you define specific shapes or paths to determine what part of the element should be visible and what part should be hidden or clipped. */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%  , 0 100%);
+    }
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+    .home .row .content h3{
+        font-size: 6rem;
+        
+    }
+}
+
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+
+    }
+    .home .row .content h3{
+        font-size: 5rem;
+        
+    }
+    .heading{
+        font-size: 3rem;
+    }
+}
+
+@media(max-width:600px){
+    .video .row .image img{
+        /* margin-top: 25px; */
+         width: 100%;
+         height: 100%;
+         /* width: auto; */
+         /* height: auto; */
+         padding-left: 23px;
+         display: flex;
+         align-items: center;
+        justify-content: center;
+    }
+        
+    
+    
+}
